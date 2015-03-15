@@ -68,6 +68,9 @@ Rails.application.routes.draw do
   match 'articles/markup_help/:id', :to => 'articles#markup_help', :format => false
   match 'articles/tag', :to => 'articles#tag', :format => false
   match 'articles/category', :to => 'articles#category', :format => false
+  # match 'admin/merge_article', :to => 'admin/content#merge', :format=>false
+
+
 
   # SetupController
   match '/setup', :to => 'setup#index', :format => false
@@ -87,6 +90,7 @@ Rails.application.routes.draw do
   # AuthorsController
   match '/author/:id(.:format)', :to => 'authors#show', :format => /rss|atom/, :as => 'xml'
   match '/author(/:id)', :to => 'authors#show', :format => false
+  'match /admin/content'
 
   # ThemesController
   scope :controller => 'theme', :filename => /.*/ do

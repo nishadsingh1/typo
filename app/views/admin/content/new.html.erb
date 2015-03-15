@@ -6,6 +6,6 @@
 <% params[:sid] = @article.id %>
 <% form_tag(:controller=>'content', :action=> 'merge', :id=> @article.id) do %>
     <%= label_tag("Article id:") %>
-    <%= text_field_tag(:merge_article) %>
+    <%= text_field_tag(:merge_with) %>
     <%= submit_tag("Merge") %>
  <% end %>	
