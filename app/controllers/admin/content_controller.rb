@@ -7,7 +7,7 @@ class Admin::ContentController < Admin::BaseController
   cache_sweeper :blog_sweeper
 
   def merge
-    other_article_id = params[:merge_article]
+    other_article_id = params[:merge_with]
     article_id = params[:id]
     article = Article.find(article_id)
     article.merge(article_id, other_article_id)

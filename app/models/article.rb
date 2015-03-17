@@ -71,14 +71,9 @@ class Article < Content
     end
   end
 
-  def set_permalink
-    return if self.state == 'draft'
-    self.permalink = self.title.to_permalink if self.permalink.nil? or self.permalink.empty?
-  end
-
   def merge(article_id, other_article_id)
-    puts article_id
-    puts other_article_id
+    # puts "ARTICLE ID:  "+article_id
+    # puts "OTHER ARTICLE ID:  "+other_article_id
     article = Article.find(article_id)
     other_article = Article.find(other_article_id)
     article.body_and_extended = article.body_and_extended + other_article.body_and_extended
@@ -89,6 +84,12 @@ class Article < Content
     end
     article.save
     return article
+  end
+
+
+  def set_permalink
+    return if self.state == 'draft'
+    self.permalink = self.title.to_permalink if self.permalink.nil? or self.permalink.empty?
   end
 
   def has_child?
