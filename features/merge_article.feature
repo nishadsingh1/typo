@@ -3,6 +3,10 @@ Feature: Merge Article
   I want to merge articles
   To remove redundant content from the site
 
+  Background:
+    Given the blog is set up
+    And I am logged into the admin panel
+
   Scenario: When articles are merged, the merged article should contain the text of both previous articles.
 
   Scenario: When articles are merged, the merged article should have one author (either one of the authors of the original article).  
